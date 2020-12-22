@@ -1,18 +1,16 @@
 class Main {
     public static void main(String[] args){
         System.out.println("hola mundo");
-        Car car = new Car();
-        car.driver = "Andres Caizo";
-        car.license = "AMD321";
+    
+        
+        Car car = new Car("AMD321", new Account("Andres", "1723422"));
         car.passengers = 4;
-        System.out.println("Car1 license: " + car.driver);
+        System.out.println("Car1 license: " + car.driver.name);
 
-        Car car2 = new Car();
-        car2.driver = "Luis Caizo";
-        car2.license = "LA321";
+        Car car2 = new Car("AMs321", new Account("Juan", "23232"));
         car2.passengers = 4;
 
-        System.out.println("Car2 license: " + car2.driver);
+        System.out.println("Car2 license: " + car2.driver.name);
 
         car.printDataCar();
 
