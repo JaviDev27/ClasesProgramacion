@@ -1,7 +1,9 @@
 <?php
 
-function Route(){
+Class Route{
     public $id;
     public $init;
     public $end;
 }
+
+?>
