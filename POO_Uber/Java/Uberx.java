@@ -7,4 +7,12 @@ public class Uberx extends Car{
         this.brang = brand;
         this.model = model;
     }
+
+    @Override
+    void printDataCar() {
+        // TODO Auto-generated method stub
+        super.printDataCar();
+        System.out.println("modelo: " + model + 
+        " marca: " + brang );
+    }
 }
