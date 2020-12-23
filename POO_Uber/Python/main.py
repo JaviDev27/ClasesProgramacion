@@ -1,5 +1,6 @@
 from car import Car
 from account import Account
+from uberX import UberX
 
 if __name__=="__main__":
     print("hola")
@@ -9,5 +10,5 @@ if __name__=="__main__":
     print(vars(car))
     print(vars(car.driver))
 
-
-    
+    uberx = UberX("CD123", Account("Juan","12333"),"Chevrolet", "Spark")
+    print(vars(uberx.driver))
