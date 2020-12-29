@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de Caja</title>
+</head>
+<style>
+    /*es un abuena practica quitar el borde*/
+    body{
+        margin: 0;
+    }
+
+    .caja1{
+        background-color: #FF3D3D;
+        width: 20px;
+        height: 20px;
+        padding: 20px;
+        border: 2px solid #AD2CE8;
+        box-sizing: border-box; /*respeta lo que estabas seteando en ancho y alto*/
+        /*margin-bottom: 10px; /*margen solo en la parte de abajo*/
+        margin: 10px 20px 30px 40px;
+    }
+
+    .caja2{
+        background-color: #FF9033;
+        width: 30px;
+        height: 30px;
+        padding: 20px;
+        border: 2px solid #AD2CE8;
+        box-sizing: border-box; /*respeta lo que estabas seteando en ancho y alto*/
+        margin: 10px;
+    }
+</style>
+<body>
+    <div class="caja1"></div>
+    <div class="caja2"></div>
+</body>
+</html>
