@@ -6,12 +6,32 @@
     <title>Document</title>
 </head>
 <style>
-    p{
+/*     p:first-child{
         color:red;
     }
+    p:last-child{
+        color: greenyellow;
+    }
+    p:nth-child(2n){
+        color: blue;
+    } */
+
+    p::first-letter{
+        color: red;
+        font-size: 20px;
+    }
+    p:focus{
+        color: green;
+    }
+
 </style>
 <body>
-    <p>Hola mundo feliz</p>
-    <p>Hola mundo</p>
+    <div>
+        <p>Hola mundo feliz</p>
+        <p>Hola mundo</p>
+        <p>🙈 estoy aprendiendo</p>
+        <p>😃 y estoy muy emocionado</p>
+        <p>😃 me gusta programar</p>
+    </div>
 </body>
 </html>
