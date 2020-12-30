@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 1</title>
+</head>
+
+<style>
+    button:hover{
+        color: red;
+    }
+
+    /*Esto utiliza flex*/
+/*
+    .Cuadros{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-between;
+    }*/
+    
+    /*Esto utiliza grid*/
+    .Cuadros{
+        width: 100%;
+        height: 1000px;
+        display: grid;
+        /*grid-template-columns: [col0] 40px [col1] 50px [col2] auto [col3]  50px [col4]  40px [col5];
+        grid-template-rows: [row0] 25% [row1] 100px [row2] auto [row3];*/
+        grid-template-columns: 25% 50% 25%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "cuadro_azul cuadro_azul cuadro_azul"
+            "cuadro_rojo cuadro_rojo cuadro_rojo"
+            ". . circulo_verde";
+    }
+
+    .Cuadros__cuadro-tamano{
+        background-color: blue;
+        width: 100px;
+        height: 100px;
+        margin: 5px 5px 5px 5px;
+        grid-area: cuadro_azul;
+    }
+
+    .Cuadros__cuadro-rojo {
+        background-color: red;
+        width: 50px;
+        height: 50px;
+        margin: 5px 5px 5px 5px;
+        grid-area: cuadro_rojo;
+    }
+
+    .Cuadros__circulo-color {
+        background-color: green;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        grid-area: circulo_verde;
+    }
+
+
+</style>
+
+<body>
+    <header>
+        Email: 
+        <input type="e.jm@mail.com">
+        Password: 
+        <input type="email">
+
+        <button>Login</button>
+
+    </header>
+
+    <nav>
+        <a href="">Servicios</a>
+        <a href="">Productos</a>
+    </nav>
+
+    <article>
+        <p>El creador de tus ideas eres tú <br> recuerda <br><b>SI NO ESTAS CREANDO ESTAS DESTRUYENDO</b></p>
+    </article>
+
+    <section class="Cuadros">
+        <div class="Cuadros__cuadro-tamano"></div>
+        <div class="Cuadros__cuadro-tamano"></div>
+        <div class="Cuadros__cuadro-tamano"></div>
+        <div class="Cuadros__cuadro-tamano"></div>
+        <div class="Cuadros__cuadro-tamano"></div>
+        <div class="Cuadros__cuadro-tamano"></div>
+        <div class="Cuadros__cuadro-tamano"></div>
+        <div class="Cuadros__cuadro-rojo"></div>
+        <div class="Cuadros__cuadro-rojo"></div>
+        <div class="Cuadros__cuadro-rojo"></div>
+        <div class="Cuadros__cuadro-rojo"></div>
+        <div class="Cuadros__cuadro-rojo"></div>
+        <div class="Cuadros__cuadro-rojo"></div>
+        <div class="Cuadros__circulo-color"></div>
+        <div class="Cuadros__circulo-color"></div>
+        <div class="Cuadros__circulo-color"></div>
+        <div class="Cuadros__circulo-color"></div>
+    </section>
+
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Casa</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>usoss </p>
+    </section>
+
+    <footer>
+        <h1>Siguenos en:</h1>
+        <nav>
+            <a href="">Facebook</a>
+            <a href="">Instagram</a>
+        </nav>
+    </footer>
+</body>
+</html>
