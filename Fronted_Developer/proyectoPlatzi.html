@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <style>
-    body{
+    body {
         margin: 0;
         font-family: 'Muli', sans-serif;
         background-color: #0093E9;
-        /*background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);*/      
+        /*background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);*/
     }
-    .header{
+
+    .header {
         background-color: #0093E9;
         /*background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);*/
-        width: 100%; /*es medida relativa*/
+        width: 100%;
+        /*es medida relativa*/
         height: 80px;
         display: flex;
         justify-content: space-between;
@@ -24,17 +27,17 @@
     }
 
     /*img es hijo de header*/
-    .header__imagen{
+    .header__imagen {
         width: 200px;
         margin-top: 10px;
         margin-left: 10px;
     }
 
-    .header__menu{
+    .header__menu {
         margin-right: 30px;
     }
 
-    .header__menu ul{
+    .header__menu ul {
         display: none;
         list-style: none;
         padding: 0px;
@@ -45,54 +48,243 @@
     }
 
 
-    .header__menu:hover ul, ul:hover{
+    .header__menu:hover ul,
+    ul:hover {
         display: block;
     }
-    
-    .header__menu li{
+
+    .header__menu li {
         margin: 10px 0px;
     }
 
-    .header__menu li a{
+    .header__menu li a {
         color: white;
         text-decoration: none;
     }
 
-    .header__menu li a:hover{
+    .header__menu li a:hover {
         text-decoration: underline;
     }
-    
 
-    .header__menu--profile{
+
+    .header__menu--profile {
         margin-right: 8px;
         display: flex;
         align-items: center;
         cursor: pointer;
     }
 
-    .header__menu--profile img{
+    .header__menu--profile img {
         margin-right: 8px;
         width: 40px;
     }
 
-    .header__menu--profile p{
+    .header__menu--profile p {
         margin: 0px;
         color: white;
     }
+
+    /*Es el buscador*/
+
+    .main {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__tittle {
+        color: white;
+        font-size: 25px;
+    }
+
+    .input {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: 2px solid white;
+        border-radius: 25px;
+        color: white;
+        font-family: 'Muli', sans-serif;
+        font-size: 16px;
+        height: 30px;
+        padding: 0px 20px;
+        width: 70%;
+        outline: none;  
+    }
+
+    ::placeholder {
+        color: white;
+    }
+
+    .carusel{
+        overflow: scroll;
+        overflow-x: hidden;
+        width: 100%;
+        padding: 30px;
+        position: relative;
+    }
+
+    .carusel__contenedor{
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+
+    .carusel-item{
+        width: 200px;
+        height: 250px;
+        background-color: red;
+        overflow: hidden;
+        margin-top: 10px;
+        display: inline-block;
+        margin-right: 10px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center left;
+        position: relative;
+    }
+
+    .carusel-item:hover ~ .carusel-item{
+        transform: translate3d(100px,0,0);
+        
+    }
+
+    .carusel__contenedor:hover .carusel-item{
+        opacity: 0.3;
+    }
+
+    .carusel__contenedor:hover .carusel-item:hover{
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    .carusel-item__img{
+        width: 200px;
+        height: 250px;
+        object-fit: cover;
+    }
+
+
+
+    .carusel-item__detalles{
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%);
+        font-size: 12px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 160px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        color: white;
+        
+    }
+
+    .carusel-item__detalles img{
+        width: 30px;
+    }
+
+    .carusel-item__detalles--tittle, .carusel-item__detalles--subtittle{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .carusel-item:hover .carusel-item__detalles{
+        opacity: 1;
+    }
+
+
 </style>
+
 <body>
     <header class="header">
-    <img class="header__imagen" src="https://raw.githubusercontent.com/platzi/PlatziVideo/feature/react/src/assets/static/logo-platzi-video-BW2.png" alt="User">
-    <div class="header__menu">
-        <div class="header__menu--profile">
-            <img src="./user-icon.png" alt="">
-            <p>Perfil</p>
+        <img class="header__imagen"
+            src="https://raw.githubusercontent.com/platzi/PlatziVideo/feature/react/src/assets/static/logo-platzi-video-BW2.png"
+            alt="User">
+        <div class="header__menu">
+            <div class="header__menu--profile">
+                <img src="./user-icon.png" alt="">
+                <p>Perfil</p>
+            </div>
+            <ul>
+                <li><a href="">Cuenta</a></li>
+                <li><a href="">Cerrar Sesión</a></li>
+            </ul>
         </div>
-        <ul>
-            <li><a href="">Cuenta</a></li>
-            <li><a href="">Cerrar Sesión</a></li>
-        </ul>
-    </div>
     </header>
+
+    <section class="main">
+        <h2 class="main__tittle">¿Qué quieres ver hoy?</h2>
+        <input class="input" type="text" placeholder="Buscar..">
+    </section>
+
+    <section class="carusel">
+        <div class="carusel__contenedor">
+
+            <div class="carusel-item">
+                <img class="carusel-item__img" src="https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                <div class="carusel-item__detalles">
+                    <div>
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/plus.png"/>
+                    </div>
+                    <p class="carusel-item__detalles--tittle">Titulo descriptivo</p>
+                    <p class="carusel-item__detalles--subtittle">2019 16+ 45 minutos</p>
+                </div>
+            </div>
+
+            <div class="carusel-item">
+                <img class="carusel-item__img" src="https://images.pexels.com/photos/1407322/pexels-photo-1407322.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                <div class="carusel-item__detalles">
+                    <div>
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/plus.png"/>
+                    </div>
+                    <p class="carusel-item__detalles--tittle">Titulo descriptivo</p>
+                    <p class="carusel-item__detalles--subtittle">2019 16+ 45 minutos</p>
+                </div>
+            </div>
+
+            <div class="carusel-item">
+                <img class="carusel-item__img" src="https://images.pexels.com/photos/3756766/pexels-photo-3756766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <div class="carusel-item__detalles">
+                    <div>
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/plus.png"/>
+                    </div>
+                    <p class="carusel-item__detalles--tittle">Titulo descriptivo</p>
+                    <p class="carusel-item__detalles--subtittle">2019 16+ 45 minutos</p>
+                </div>
+            </div>
+
+            <div class="carusel-item">
+                <img class="carusel-item__img" src="https://images.pexels.com/photos/3693108/pexels-photo-3693108.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <div class="carusel-item__detalles">
+                    <div>
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/plus.png"/>
+                    </div>
+                    <p class="carusel-item__detalles--tittle">Titulo descriptivo</p>
+                    <p class="carusel-item__detalles--subtittle">2019 16+ 45 minutos</p>
+                </div>
+            </div>
+
+            <div class="carusel-item">
+                <img class="carusel-item__img" src="https://images.pexels.com/photos/462510/pexels-photo-462510.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+                <div class="carusel-item__detalles">
+                    <div>
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/plus.png"/>
+                    </div>
+                    <p class="carusel-item__detalles--tittle">Titulo descriptivo</p>
+                    <p class="carusel-item__detalles--subtittle">2019 16+ 45 minutos</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
 </body>
+
 </html>
