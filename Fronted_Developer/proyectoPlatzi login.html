@@ -6,33 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
-<style>
-    body {
-        margin: 0;
-        font-family: 'Muli', sans-serif;
-        background-color: #0093E9;
-    }
-
-    .header {
-        background-color: #0093E9;
-        width: 100%;
-        /*es medida relativa*/
-        height: 80px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    /*img es hijo de header*/
-    .header__imagen {
-        width: 200px;
-        margin-top: 10px;
-        margin-left: 10px;
-    }
-
-</style>
-
 <body>
     <header class="header">
         <img class="header__imagen"
@@ -59,11 +34,10 @@
                 <div><img src="./icons8-google-plus-50.png"/>Iniciar sesón con Google</div>
                 <div><img src="./icons8-twitter-50.png"/>Iniciar sesón con Twitter</div>
             </section>
-
+            <p class="login__contenedor--registro">No tienes una cuenta
+                <a href="">Registrate</a>
+            </p>
         </section>
-        <p class="login__contenedor">No tienes una cuenta
-            <a href="">Registrate</a>
-        </p>
     </section>
 
     <footer class="footer">
