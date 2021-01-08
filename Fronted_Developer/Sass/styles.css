@@ -1,0 +1,105 @@
+body {
+  margin: 0px;
+  font-family: "Muli", sans-serif;
+}
+
+.header {
+  background-color: #0093E9;
+}
+
+.header__imgContenedor--img {
+  height: 40px;
+  margin: 10px 10px;
+}
+
+.registro {
+  background: linear-gradient(#0093E9, #005C91);
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  padding: 60px 30px 60px;
+  min-height: calc(100vh - 100px);
+}
+
+.registro__contenedor {
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 2px solid white;
+  border-radius: 40px;
+  width: 300px;
+  min-height: 500px;
+  padding: 60px 68px 40px;
+  color: white;
+  box-shadow: 5px 10px 20px 5px rgba(48, 106, 140, 0.6);
+}
+
+.registro__contenedor--datos {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px solid white;
+  padding: 0px 10px;
+  background-color: transparent;
+  outline: none;
+  height: 30px;
+  margin: 10px;
+  font-family: "Muli", sans-serif;
+  font-size: 14px;
+}
+
+::placeholder {
+  color: white;
+}
+
+.registro__contenedor--button {
+  margin: 20px;
+  border-radius: 20px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  height: 40px;
+  color: white;
+  font-family: "Muli", sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.registro__IniciarSesion {
+  display: flex;
+  justify-content: space-around;
+}
+.registro__IniciarSesion a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+.registro__IniciarSesion a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  background-color: #005C91;
+  height: 50px;
+}
+
+.footer div > a {
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.footer div > :hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=styles.css.map */
