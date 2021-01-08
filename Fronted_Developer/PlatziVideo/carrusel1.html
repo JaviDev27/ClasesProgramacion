@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .carusel{
+        width: 100%;
+        overflow: scroll;
+        padding: 30px;
+        position: relative;
+    }
+
+    .carusel__contenedor{
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+
+    .carusel-item{
+        background-color: aquamarine;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: 450ms all;
+        transform-origin: center left;
+        position: relative;
+    }
+
+    .carusel-item:hover ~ .carusel-item{
+        transform: translate3d(100px,0,0);
+        
+    }
+
+    .carusel__contenedor:hover .carusel-item{
+        opacity: 0.3;
+    }
+
+    .carusel__contenedor:hover .carusel-item:hover{
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    .carusel-item__img{
+        width: 200;
+        height: 250;
+        object-fit: cover;
+    }
+
+
+
+    .carusel-item__detalles{
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 100%);
+        font-size: 12px;
+        opacity: 0;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 160px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        color: white;
+        
+    }
+
+    .carusel-item__detalles img{
+        width: 30px;
+    }
+
+    .carusel-item__detalles--tittle, .carusel-item__detalles--subtittle{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .carusel-item:hover .carusel-item__detalles{
+        opacity: 1;
+    }
+
+
+</style>
+<body>
+    <section class="carusel">
+        <div class="carusel__contenedor">
+            <div class="carusel-item">
+                <img class="carusel-item__img" src="https://images.pexels.com/photos/4144923/pexels-photo-4144923.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                <div class="carusel-item__detalles">
+                    <div>
+                        <img src="https://img.icons8.com/flat_round/64/000000/play--v1.png"/>
+                        <img src="https://img.icons8.com/flat_round/64/000000/plus.png"/>
+                    </div>
+                    <p class="carusel-item__detalles--tittle">Titulo descriptivo</p>
+                    <p class="carusel-item__detalles--subtittle">2019 16+ 45 minutos</p>
+                </div>
+            </div>
+            <div class="carusel-item"></div>
+            <div class="carusel-item"></div>
+            <div class="carusel-item"></div>
+            <div class="carusel-item"></div>
+        </div>
+    </section>
+</body>
+</html>
