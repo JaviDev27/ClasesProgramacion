@@ -1,2 +1,7 @@
 *.png
 *.jpg
+PlatziVideo/.storybook/
+PlatziVideo/node_modules/
+PlatziVideo/package-lock.json
+PlatziVideo/package.json
+PlatziVideo/stories/
