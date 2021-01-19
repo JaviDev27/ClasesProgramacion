@@ -1,36 +1,44 @@
-import React from 'react';
+import React from "react"; // importar React
+import conflogo from "../images/badge-header.svg";
+import "./styles/Badge.css"; // aqui solo importar sin asignar variables
 
-import './styles/Badge.css';
-import confLogo from '../images/badge-header.svg';
+//Se crea un objeto Badge que hereda de la clase
+//React components
 
 class Badge extends React.Component {
+  /*todo componente debe tener una
+  clase llamada render
+  Render define lo que va a mostarr 
+  el componente*/
+
   render() {
     return (
       <div className="Badge">
-        <div className="Badge__header">
-          <img src={confLogo} alt="Logo de la conferencia" />
-        </div>
+        <header className="Badge__header">
+          <img src={conflogo} alt="Logo Conferen"></img>
+        </header>
 
         <div className="Badge__section-name">
           <img
             className="Badge__avatar"
-            src={this.props.avatarUrl}
+            src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png"
             alt="Avatar"
-          />
+          ></img>
           <h1>
-            {this.props.firstName} <br /> {this.props.lastName}
+            Javier <br></br> Manobanda
           </h1>
         </div>
 
         <div className="Badge__section-info">
-          <h3>{this.props.jobTitle}</h3>
-          <div>@{this.props.twitter}</div>
+          <h3>Frontend Engineer</h3>
+          <div>@javi_manobanda</div>
         </div>
 
-        <div className="Badge__footer">#platziconf</div>
+        <footer className="Badge__footer">#platziconf</footer>
       </div>
     );
   }
 }
 
+// se necesita exportar el componente
 export default Badge;
