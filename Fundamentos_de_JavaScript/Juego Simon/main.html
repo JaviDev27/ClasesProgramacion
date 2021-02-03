@@ -83,6 +83,11 @@
       .hide {
         display: none;
       }
+
+      .{
+        font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+
     </style>
   </head>
   <body>
@@ -93,7 +98,9 @@
       <div id="verde" class="color verde right" data-color="verde"></div>
       <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar a jugar!</button>
     </div>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
+
         const celeste = document.getElementById('celeste');
         const violeta = document.getElementById('violeta');
         const naranja = document.getElementById('naranja');
@@ -101,11 +108,13 @@
         const btnEmpezar = document.getElementById('btnEmpezar'); //obtienen el boton con el Id
         const ULTIMO_NIVEL = 10;
 
+
         class Juego{
             constructor(){
-
-                this.inicializar()
-                    this.generarSecuencia();
+                this.inicializar= this.inicializar.bind(this);
+                this.inicializar() //
+                this.generarSecuencia();
+                
                 setTimeout(()=>{
                     this.siguienteNivel();
                 },500)
@@ -114,7 +123,8 @@
 
                  this.siguienteNivel = this.siguienteNivel.bind(this);
                  this.elegirColor = this.elegirColor.bind(this); //mantienes la referencia al this en este casoa a la clase juego
-                 btnEmpezar.classList.add('hide'); // aqui le asignas una clase en este caso la vas a ocultar.
+                 
+                 this.toggleBtnEmpezar()
                  this.nivel = 1;
 
 
@@ -125,6 +135,14 @@
                      naranja,
                      verde,
                  };
+             }
+
+             toggleBtnEmpezar(){
+               if (btnEmpezar.classList.contains('hide')) {
+                btnEmpezar.classList.remove('hide'); // quita una clase clase en este caso la vas a ocultar.
+               }else{
+                btnEmpezar.classList.add('hide'); // aqui le asignas una clase en este caso la vas a ocultar.
+               }
              }
 
              //genrar array de 10 numeros random entre 0 y 3
@@ -216,16 +234,34 @@
                      if (this.subNivel === this.nivel) {
                          this.nivel++;
                          this.eliminarEventosClick();
-
-                         if(this.nivel === (this.ULTIMO_NIVEL + 1)){
+                         //debugger
+                         if(this.nivel === (ULTIMO_NIVEL + 1)){
                              //Gano
+
+                             this.ganoElJuego();
                          }else{
                              setTimeout(this.siguienteNivel,1500)
                          }
                      }
                  }else{
                      //perdio
+                     this.perdioElJuego();
                  }
+             }
+
+             ganoElJuego(){
+               //debugger
+               swal('Simon','Felicitaciones Ganastes el Juego', 'success')
+               .then(this.inicializar);
+             }
+
+             perdioElJuego(){
+               //debugger
+               swal('Simon',"Lo siento, Perdiste", 'error')
+               .then(()=>{
+                 this.eliminarEventosClick();
+                 this.inicializar();
+               })
              }
 
         }
