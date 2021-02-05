@@ -11,9 +11,9 @@ def notificar():
     print('Tu mail se ha enviado, correctamente!')
 
 
-enviar_un_mail = enviar_mail(notificar)
+notificar = enviar_mail(notificar)
 
-enviar_un_mail()
+notificar()
 
 """
 
