@@ -9,7 +9,7 @@ En este ejemplo se va a creae una clase llamada Automovil
 Esto permite tener un mejor entendimiento de como funciona la 
 Programación Orientada a Objetos, es decir unicamente on crear 
 el objeto Automovil vas a tener un objeto con toda la funcionalidad
-pero dividido en varia parte. en dodne el codigo es mas entendible
+pero dividido en varia parte. en donde el codigo es mas entendible
 y la mantenibilidad se lo puede hacer por partes.
 
 
